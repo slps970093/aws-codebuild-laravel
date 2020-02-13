@@ -6,9 +6,9 @@ phases:
       php: 7.3
   pre_build:
     commands:
-      - compose install
   build:
     commands:
+      - compose install
       - php artisan key:generate
       - phpunit
   post_build:
