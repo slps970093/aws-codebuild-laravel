@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: laravel-install
+  pre_build:
+    commands:
+      - compose install
+  build:
+    commands:
+      - php artisan key:generate
+      - phpunit
+  post_build:
+    commands:
+      - echo Build completed on `date`
